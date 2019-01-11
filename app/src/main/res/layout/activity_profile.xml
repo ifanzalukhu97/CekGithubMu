@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            xmlns:tools="http://schemas.android.com/tools"
+            android:id="@+id/rootLayout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/colorBackground"
+            android:padding="8dp"
+            tools:context=".ProfileActivity">
+
+    <android.support.constraint.ConstraintLayout
+            android:id="@+id/wrapper"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+        <TextView
+                android:id="@+id/txtTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/activity_vertical_margin"
+                android:text="@string/github_profile"
+                android:textColor="@color/colorPrimary"
+                android:textSize="40sp"
+                android:visibility="invisible"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"/>
+
+        <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/avatar"
+                android:layout_width="220dp"
+                android:layout_height="220dp"
+                android:layout_marginTop="28dp"
+                android:contentDescription="@string/avatar_profile"
+                app:civ_border_color="@color/colorPrimary"
+                app:civ_border_width="8dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/txtTitle"
+                tools:src="@tools:sample/avatars"/>
+
+        <TextView
+                android:id="@+id/txtName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:textColor="@color/colorAccent"
+                android:textSize="28sp"
+                android:textStyle="bold"
+                android:textAlignment="center"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/avatar"
+                tools:text="@tools:sample/full_names"/>
+
+        <TextView
+                android:id="@+id/txtLocation"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/activity_vertical_margin"
+                android:textColor="@color/colorPrimaryDark"
+                android:textSize="20sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/txtName"
+                tools:text="@tools:sample/cities"/>
+
+        <TextView
+                android:id="@+id/repositories"
+                style="@style/textDetail"
+                android:layout_marginTop="48dp"
+                app:layout_constraintEnd_toEndOf="@+id/txtPublicRepos"
+                app:layout_constraintStart_toStartOf="@+id/txtPublicRepos"
+                app:layout_constraintTop_toBottomOf="@+id/txtLocation"
+                tools:text="@string/zero"/>
+
+        <TextView
+                android:id="@+id/followers"
+                style="@style/textDetail"
+                app:layout_constraintBaseline_toBaselineOf="@+id/repositories"
+                app:layout_constraintEnd_toStartOf="@+id/following"
+                app:layout_constraintStart_toEndOf="@+id/repositories"
+                tools:text="@string/zero"/>
+
+        <TextView
+                android:id="@+id/following"
+                style="@style/textDetail"
+                app:layout_constraintBaseline_toBaselineOf="@+id/followers"
+                app:layout_constraintEnd_toEndOf="@+id/txtFollowing"
+                app:layout_constraintStart_toStartOf="@+id/txtFollowing"
+                tools:text="@string/zero"/>
+
+        <TextView
+                android:id="@+id/txtPublicRepos"
+                style="@style/textDetailLabel"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="@dimen/activity_vertical_margin"
+                android:layout_marginBottom="16dp"
+                android:text="@string/repositories"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/repositories"/>
+
+        <TextView
+                android:id="@+id/txtFollowing"
+                style="@style/textDetailLabel"
+                android:layout_marginEnd="16dp"
+                android:text="@string/following"
+                app:layout_constraintBottom_toBottomOf="@+id/txtPublicRepos"
+                app:layout_constraintEnd_toEndOf="parent"/>
+
+        <TextView
+                android:id="@+id/txtFollowers"
+                style="@style/textDetailLabel"
+                android:text="@string/followers"
+                app:layout_constraintBottom_toBottomOf="@+id/txtPublicRepos"
+                app:layout_constraintEnd_toStartOf="@+id/txtFollowing"
+                app:layout_constraintStart_toEndOf="@+id/txtPublicRepos"/>
+
+        <ProgressBar
+                android:id="@+id/progressLoadProfile"
+                style="?android:attr/progressBarStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"/>
+
+    </android.support.constraint.ConstraintLayout>
+
+</ScrollView>

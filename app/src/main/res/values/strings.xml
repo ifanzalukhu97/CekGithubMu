@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">CekGithubMu</string>
+    <string name="avatar_profile">Avatar</string>
+    <string name="repositories">Repositories</string>
+    <string name="following">Following</string>
+    <string name="followers">Followers</string>
+    <string name="zero">0</string>
+    <string name="github_profile">Github Profile</string>
+    <string name="github_login_id">Input Github ID</string>
+    <string name="cek_profile">Cek Profile</string>
+</resources>
